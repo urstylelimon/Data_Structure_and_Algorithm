@@ -1,10 +1,10 @@
 queue = []
-def push_element():
+def enqueue():
     element = input("Enter the element: ")
     queue.append(element)
     print(queue)
 
-def pop_element():
+def dequeue():
     if not queue:
         print("queue is empty!")
     else:
@@ -17,9 +17,9 @@ while True:
     choice = int(input())
 
     if choice == 1:
-        push_element()
+        enqueue()
     elif choice == 2:
-        pop_element()
+        dequeue()
     elif choice == 3:
         break
     else:
