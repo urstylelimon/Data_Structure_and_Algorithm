@@ -8,7 +8,10 @@ for i in range(1,len(nums)):
             nums[i-1] = nums[j]
             nums[j] = temp
             j = i-1
+        else:
+            break
         i -= 1
 
 print(nums)
+
 
