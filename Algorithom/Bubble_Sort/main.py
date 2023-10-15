@@ -1,4 +1,4 @@
-nums = [6,2,5,1,3,4]
+nums = [6,2,5,1,1,3,4]
 n = 1
 for i in range(len(nums)):
     j = 0
