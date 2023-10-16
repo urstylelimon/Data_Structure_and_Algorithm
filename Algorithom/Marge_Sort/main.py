@@ -30,7 +30,9 @@ def marge_list(nums):
             nums[k] = right[j]
             j = j + 1
             k = k + 1
+
     return nums
+
 
 list = [2,6,5,1,7,4,3]
 
