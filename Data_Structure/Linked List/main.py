@@ -20,7 +20,7 @@ class linklist():
         current = self.head
         while current:
             print(current.data)
-            current = current.next
+            current = current.nextn
 
     def delete_head(self):
         if self.head is not None:
