@@ -39,6 +39,19 @@ class DoubleLinkedList():
             new_node.next = current
             self.head = new_node
 
+    def reverse_display(self):
+        current = self.head
+        while current.next is not None:
+            current = current.next
+
+        while current:
+            print(current.data)
+            if current.prev:
+                current = current.prev
+            else:
+                break
+
+
 
 l1 = DoubleLinkedList()
 l1.insert(1)
@@ -46,4 +59,5 @@ l1.insert(2)
 l1.insert(3)
 l1.insert(4)
 
-l1.display()
+
+l1.reverse_display()
