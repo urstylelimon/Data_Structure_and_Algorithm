@@ -29,6 +29,17 @@ class DoubleLinkedList():
                 print("Previos Value : ", current.prev.data)
             current = current.next
 
+    def prepend(self,data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            current.prev = new_node
+            new_node.next = current
+            self.head = new_node
+
+
 l1 = DoubleLinkedList()
 l1.insert(1)
 l1.insert(2)
