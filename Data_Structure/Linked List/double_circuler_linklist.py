@@ -1,6 +1,3 @@
-from tkinter.constants import CURRENT
-
-
 class Node:
     def __init__(self,data):
         self.data = data
@@ -32,12 +29,34 @@ class LinkedList:
                 break
             current = current.next
 
+    def remove(self,data):
+        current = self.head
+
+        while current:
+            if current.data == data:
+                print('I am in Condition')
+                prev_node = current.prev # 4
+                next_node = current.next # 2
+                prev_node.next = next_node
+                next_node.prev = prev_node
+                print('----------')
+                print(current.data,'Remove Successfully')
+                print('----------')
+                if current == self.head:
+                    self.head = next_node
+                break
+            current = current.next
+
+
 
 l1 = LinkedList()
 l1.append(1)
 l1.append(2)
 l1.append(3)
 l1.append(4)
+
 l1.display()
 
+l1.remove(4)
 
+l1.display()
