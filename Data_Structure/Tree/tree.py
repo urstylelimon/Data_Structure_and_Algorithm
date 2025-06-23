@@ -13,11 +13,12 @@ root.left.left = Node(4)
 root.left.right = Node(5)
 
 #Traversal
-def preorder(node):
+def postorder(node):
     if node:
+
+        postorder(node.left)
+        postorder(node.right)
         print(node.data)
-        preorder(node.left)
-        preorder(node.right)
 
 print("Preorder Traversal:")
-preorder(root)
+postorder(root)
