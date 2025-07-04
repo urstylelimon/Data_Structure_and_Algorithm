@@ -1,33 +1,32 @@
 class Graph:
     def __init__(self):
-        self.graph = {}  # adjacency list
+        self.graph = {}
 
-    def add_node(self, node):
+    def add_node(self,node):
         if node not in self.graph:
             self.graph[node] = []
 
-    def add_edge(self, node1, node2):
-        # Make sure both nodes exist
+    def add_edge(self,node1,node2):
         if node1 not in self.graph:
-            self.add_node(node1)
+            self.graph[node1] = []
         if node2 not in self.graph:
-            self.add_node(node2)
+            self.graph[node2] = []
 
-        # For undirected graph, add both ways
         self.graph[node1].append(node2)
-        self.graph[node2].append(node1)
-
-    def show_graph(self):
-        for node in self.graph:
-            print(f"{node} is connected to {self.graph[node]}")
 
 
-g = Graph()
 
-g.add_node('A')
-g.add_node('B')
+    def main(self):
+        flag = True
+        while flag:
+            node1 = str(input("Enter the first node: "))
+            node2 = str(input("Enter the second node: "))
 
-g.add_edge('A', 'B')
+            if flag:
+                self.add_node(node1)
+                print(self.graph)
+            if node1 == "quit":
+                flag = False
 
-
-g.show_graph()
+p = Graph()
+p.main()
