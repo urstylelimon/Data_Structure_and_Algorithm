@@ -28,17 +28,19 @@ class Graph:
 
         while True:
 
-            user = str(input("For add new node pres 1, for connect between two nood press 2  and foq quit type quit"))
+            user = str(input("For add new node pres 1\nConnect between two nood press 2\nFor display all press 3\nquit application type quit\n"))
             if user == "1":
-                node = str(input("Enter the node: "))
+                node = str(input("Enter the node:\n"))
                 self.add_node(node)
                 print("Successfully added ndoe ", node)
 
             if user == "2":
-                node1 = str(input("Enter the node: "))
-                node2 = str(input("Enter the node: "))
+                node1 = str(input("Enter the node:\n"))
+                node2 = str(input("Enter the node:\n"))
                 self.add_edge(node1,node2)
 
+                self.display()
+            if user == "3":
                 self.display()
 
             if user == "quit" :
