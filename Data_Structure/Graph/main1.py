@@ -8,25 +8,40 @@ class Graph:
 
     def add_edge(self,node1,node2):
         if node1 not in self.graph:
-            self.graph[node1] = []
+            print(f"{node1} not in graph, please create first")
         if node2 not in self.graph:
-            self.graph[node2] = []
+            print(f"{node2} not in graph, please create first")
+        if node1 and node2 in self.graph:
+            if node2 in self.graph[node1]:
+                print(f"{node1} already connected with {node2}")
+            elif node2 not in self.graph[node1]:
+                self.graph[node1].append(node2)
 
-        self.graph[node1].append(node2)
+    def display(self):
+        for node in self.graph:
+            print(f"{node} is connectd with {self.graph[node]}")
 
 
 
     def main(self):
-        flag = True
-        while flag:
-            node1 = str(input("Enter the first node: "))
-            node2 = str(input("Enter the second node: "))
 
-            if flag:
-                self.add_node(node1)
-                print(self.graph)
-            if node1 == "quit":
-                flag = False
 
+        while True:
+
+            user = str(input("For add new node pres 1, for connect between two nood press 2  and foq quit type quit"))
+            if user == "1":
+                node = str(input("Enter the node: "))
+                self.add_node(node)
+                print("Successfully added ndoe ", node)
+
+            if user == "2":
+                node1 = str(input("Enter the node: "))
+                node2 = str(input("Enter the node: "))
+                self.add_edge(node1,node2)
+
+                self.display()
+
+            if user == "quit" :
+                break
 p = Graph()
 p.main()
