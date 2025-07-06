@@ -1,17 +1,14 @@
-nums = [6,2,5,1,3,4]
-
-for i in range(1,len(nums)):
-    j = i
-    while i > 0:
-        if nums[i-1] > nums[j]:
-            temp = nums[i-1]
-            nums[i-1] = nums[j]
-            nums[j] = temp
-            j = i-1
-        else:
+nums = [1,3,5,3,33,4,5,5,27,26,25,24,23,3,22,21,20]
+for i in range(1, len(nums)):
+    val = nums[i] #4
+    key = 1
+    s = i
+    for j in range(i):
+        if val < nums[i-key]:
+            nums[s], nums[i-key] = nums[i-key], val
+            s -= 1
+        if val > nums[i-key]:
             break
-        i -= 1
+        key += 1
 
 print(nums)
-
-
