@@ -1,14 +1,19 @@
-nums = [1,3,5,3,33,4,5,5,27,26,25,24,23,3,22,21,20]
-for i in range(1, len(nums)):
-    val = nums[i] #4
-    key = 1
-    s = i
-    for j in range(i):
-        if val < nums[i-key]:
-            nums[s], nums[i-key] = nums[i-key], val
-            s -= 1
-        if val > nums[i-key]:
-            break
-        key += 1
+nums = [5,2,4,1]
 
-print(nums)
+for i in range(1,len(nums)):
+    j = nums[i-1]
+    i = nums[i]
+
+    while nums.index(j) >= 0 :
+
+        if nums.index(j) == 0:
+
+            if j > i:
+               nums[nums.index(j)], nums[nums.index(i)] = i, j
+
+
+        elif j > i:
+            nums[nums.index(j)], nums[nums.index(i)] = i, j
+        j -= 1
+
+    print(nums)

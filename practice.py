@@ -21,4 +21,4 @@ class linklist():
 
 j = linklist()
 j.insert(1)
-j.insert(2)
+j.insert(2) 
