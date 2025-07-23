@@ -1,19 +1,11 @@
-nums = [5,2,4,1]
+nums = [4,2,5,1]
 
 for i in range(1,len(nums)):
-    j = nums[i-1]
-    i = nums[i]
+    j = i
 
-    while nums.index(j) >= 0 :
-
-        if nums.index(j) == 0:
-
-            if j > i:
-               nums[nums.index(j)], nums[nums.index(i)] = i, j
-
-
-        elif j > i:
-            nums[nums.index(j)], nums[nums.index(i)] = i, j
-        j -= 1
-
-    print(nums)
+    while i > 0:
+        if nums[i-1] > nums[j]:
+            nums[i-1], nums[j] = nums[j], nums[i-1]
+            j  -= 1
+        i -= 1
+print(nums)
